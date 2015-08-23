@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Sample App</title>
+    <style>
+      html, body { font-family: arial;}
+      body {padding: 30px;}
+      a{text-decoration: none;}
+      header ul { list-style: none; padding: 0; margin: 0; overflow: auto;}
+      header nav {border-color: #e7e7e7;}
+      header a { float:left; width: 100px; text-align: center; padding: 10px 15px; color: #777; background-color: #f2f2f2; }
+      header a:hover {color: #333;}
+      header .active {color: #333; background-color: #e7e7e7;}
+      
+
+      #messages {float: left; width: 200px; border-right: 1px solid #e7e7e7;}
+      #messages .message { display: block; border-bottom: 1px solid #e7e7e7; padding: 15px;}
+      #messages .message:last-child{border: none;}
+      #messages .message.active {background: #e7e7e7;}
+      #messages .message .from,
+      #messages .message .time {display: block;}
+
+      #inbox-stats,
+      #message-content{ margin-left: 225px;}
+
+
+    </style>
+  </head>
+  <body>
+    <div id='root'>
+    </div>
+    <script src="/static/bundle.js"></script>
+  </body>
+</html>
