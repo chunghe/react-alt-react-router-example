@@ -42,9 +42,12 @@ class InboxMessage extends React.Component {
         <div id="message-content"><p>Loading ...</p></div>
       )
     }
+    let {from, content, full, time} = this.state.messageItem;
     return (
       <div id="message-content">
-        <p>{this.state.messageItem}</p>
+        <p><b>from:</b>{from}</p>
+        <p><b>content:</b>{full}</p>
+        <p><b>time:</b>{time}</p>
       </div>
     )
   }

@@ -4,7 +4,7 @@ class InboxApi {
   static getMessages() {
     return new Promise((resolve, reject) =>
       setTimeout(function () {
-        resolve(mockData);
+        resolve(mockData.getMessages());
       }, Math.random() * 1000 + 200)
     )
   }
@@ -13,7 +13,7 @@ class InboxApi {
 
     return new Promise((resolve, reject) =>
       setTimeout(function () {
-        resolve('hello world' + Math.random());
+        resolve(mockData.getMessageItem(id));
       }, Math.random() * 1000 + 200)
     )
 
