@@ -1,22 +1,22 @@
 
 import alt from '../alt';
-import InboxActions from '../actions/InboxActions';
+import InboxMessagesActions from '../actions/InboxMessagesActions';
 
 class InboxMessagesStore {
   constructor() {
     this.messages = [];
     // Actions who have a onCamelCasedAction method or an actionName 
     // method available in the store will be bound. In this example 
-    // InboxActions.updateMessages will be handled by onUpdateMessages. 
+    // InboxMessagesActions.updateMessages will be handled by onUpdateMessages. 
     // There is no difference between calling the action handler 
     // updateMessages or onUpdateMessages it's just a matter of aesthetic preference.
-    this.bindActions(InboxActions);
+    this.bindActions(InboxMessagesActions);
 
     /*
     this.bindListeners({
-      onUpdateMessages: InboxActions.updateMessages,
-      onFetchMessages: InboxActions.fetchMessages,
-      onGetMessagesFailed: InboxActions.getMessagesFailed
+      onUpdateMessages: InboxMessagesActions.updateMessages,
+      onFetchMessages: InboxMessagesActions.fetchMessages,
+      onGetMessagesFailed: InboxMessagesActions.getMessagesFailed
     });
     */
   }

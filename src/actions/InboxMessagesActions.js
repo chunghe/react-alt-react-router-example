@@ -3,7 +3,7 @@
 import alt from '../alt';
 import InboxApi from '../utils/InboxApi';
 
-class InboxActions {
+class InboxMessagesActions {
   updateMessages(messages) {
     this.dispatch(messages);
   }
@@ -29,4 +29,4 @@ class InboxActions {
 }
 
 
-export default alt.createActions(InboxActions);
+export default alt.createActions(InboxMessagesActions);
