@@ -6,19 +6,31 @@ import InboxMessagesActions from '../actions/InboxMessagesActions';
 import InboxMessagesStore from '../stores/InboxMessagesStore';
 
 class Messages extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = InboxMessagesStore.getState();
+    this.handleStoreChange = this.handleStoreChange.bind(this);
+  }
+
   componentDidMount() {
+    InboxMessagesStore.listen(this.handleStoreChange);
     InboxMessagesActions.fetchMessages();
   }
 
+  handleStoreChange(state) {
+    console.log('handleStoreChange', state);
+    this.setState(state);
+  }
+
   render() {
-    console.log('render', this.props);
-    if (this.props.error) {
+    console.log('render InboxMessages, state:', JSON.stringify(this.state), ', props: ', this.props );
+    if (this.state.error) {
       return (
-        <div>error: {this.props.error}</div>
+        <div>error: {this.state.error}</div>
       )
     }
 
-    if (!this.props.messages.length) {
+    if (this.loading) {
       return (
         <div>Loading ...</div>    
       )
@@ -26,8 +38,7 @@ class Messages extends React.Component {
 
     return (
       <div id="messages">
-        {this.props.messages.map((message, index) => {
-
+        {this.state.messages.map((message, index) => {
           return (
             <Link key={index} className="message" to="message" params={{messageId: message.id}}>
               <span className="from">{message.from}</span>
@@ -35,23 +46,10 @@ class Messages extends React.Component {
               <span className="content">{message.time}</span>
             </Link>
           )
-
-                                                
         })}
-      
       </div>
     )
   }
 }
 
-class MessagesContainer extends React.Component {
-  render() {
-    return(
-      <AltContainer store={InboxMessagesStore}>    
-        <Messages />
-      </AltContainer>
-    )
-  }
-}
-
-export default MessagesContainer;
+export default Messages;
