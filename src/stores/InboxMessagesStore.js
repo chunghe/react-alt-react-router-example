@@ -2,7 +2,7 @@
 import alt from '../alt';
 import InboxActions from '../actions/InboxActions';
 
-class InboxStores {
+class InboxMessagesStore {
   constructor() {
     this.messages = [];
     // Actions who have a onCamelCasedAction method or an actionName 
@@ -41,4 +41,4 @@ class InboxStores {
 // The name of the store comes from the class name but on production 
 // due to heavy minification it is a good idea to provide your own name 
 // to avoid collisions.
-module.exports = alt.createStore(InboxStores, 'InboxStores');
+module.exports = alt.createStore(InboxMessagesStore, 'InboxMessagesStore');

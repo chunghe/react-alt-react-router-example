@@ -1,7 +1,7 @@
 
 import React from 'react';
 import {RouteHandler} from 'react-router';
-import Messages from './messages';
+import InboxMessages from './InboxMessages';
 
 class Inbox extends React.Component {
 
@@ -9,7 +9,7 @@ class Inbox extends React.Component {
     return (
       <div>
         <h3>Inbox component</h3>
-        <Messages />
+        <InboxMessages />
         <RouteHandler />
       </div>
     )

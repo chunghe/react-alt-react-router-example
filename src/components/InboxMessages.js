@@ -3,7 +3,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import AltContainer from 'alt/AltContainer';
 import InboxActions from '../actions/InboxActions';
-import InboxStores from '../stores/InboxStores';
+import InboxMessagesStore from '../stores/InboxMessagesStore';
 
 class Messages extends React.Component {
   componentDidMount() {
@@ -47,7 +47,7 @@ class Messages extends React.Component {
 class MessagesContainer extends React.Component {
   render() {
     return(
-      <AltContainer store={InboxStores}>    
+      <AltContainer store={InboxMessagesStore}>    
         <Messages />
       </AltContainer>
     )
