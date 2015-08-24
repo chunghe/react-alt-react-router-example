@@ -49,7 +49,7 @@ class InboxMessage extends React.Component {
         <p><b>content:</b>{full}</p>
         <p><b>time:</b>{time}</p>
       </div>
-    )
+    );
   }
 }
 

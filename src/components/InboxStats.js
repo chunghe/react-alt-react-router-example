@@ -5,10 +5,10 @@ class InboxStats extends React.Component {
 
   render() {
     return (
-      <div id="inbox-stats">
-        <h3>InboxStats component</h3>
+      <div id="message-content">
+        <p>InboxStats component</p>
       </div>
-    )
+    );
   }
 }
 

@@ -30,14 +30,14 @@ class Messages extends React.Component {
     console.log('render InboxMessages, state:', JSON.stringify(this.state), ', props: ', this.props );
     if (this.state.error) {
       return (
-        <div>error: {this.state.error}</div>
-      )
+        <div id="messsages">error: {this.state.error}</div>
+      );
     }
 
     if (this.state.loading) {
       return (
-        <div>Loading ...</div>    
-      )
+        <div id="messages">Loading ...</div>    
+      );
     }
 
     return (
@@ -49,7 +49,7 @@ class Messages extends React.Component {
               <span className="content">{message.content}</span>
               <span className="content">{message.time}</span>
             </Link>
-          )
+          );
         })}
       </div>
     )
