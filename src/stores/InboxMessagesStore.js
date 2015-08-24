@@ -5,6 +5,7 @@ import InboxMessagesActions from '../actions/InboxMessagesActions';
 class InboxMessagesStore {
   constructor() {
     this.messages = [];
+    this.loading = false;
     // Actions who have a onCamelCasedAction method or an actionName 
     // method available in the store will be bound. In this example 
     // InboxMessagesActions.updateMessages will be handled by onUpdateMessages. 
@@ -22,16 +23,16 @@ class InboxMessagesStore {
   }
 
   onUpdateMessages(messages) {
+    this.loading = false;
     this.messages = messages;
   }
 
-  // reset the array while we're fetching new messages so React can
-  // be smart and render a spinner for us since the data is empty.
   onFetchMessages() {
-    this.messages = [];
+    this.loading = true;
   }
 
   onGetMessagesFailed(error) {
+    this.loading = false;
     this.error = error;
   }
 }

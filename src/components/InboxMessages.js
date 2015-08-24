@@ -2,12 +2,12 @@
 import React from 'react';
 import {Link} from 'react-router';
 import AltContainer from 'alt/AltContainer';
-import InboxActions from '../actions/InboxActions';
+import InboxMessagesActions from '../actions/InboxMessagesActions';
 import InboxMessagesStore from '../stores/InboxMessagesStore';
 
 class Messages extends React.Component {
   componentDidMount() {
-    InboxActions.fetchMessages();
+    InboxMessagesActions.fetchMessages();
   }
 
   render() {
