@@ -17,6 +17,10 @@ class Messages extends React.Component {
     InboxMessagesActions.fetchMessages();
   }
 
+  componentWillUnmount() {
+    InboxMessagesStore.unlisten(this.handleStoreChange);
+  }
+
   handleStoreChange(state) {
     console.log('handleStoreChange', state);
     this.setState(state);
@@ -30,7 +34,7 @@ class Messages extends React.Component {
       )
     }
 
-    if (this.loading) {
+    if (this.state.loading) {
       return (
         <div>Loading ...</div>    
       )
