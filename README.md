@@ -1,4 +1,4 @@
-react-hot-boilerplate
+react-alt-react-router-example
 =====================
 
 A working react-router example implements [React Router Guide](https://github.com/rackt/react-router/blob/0.13.x/docs/guides/overview.md) in ES6
